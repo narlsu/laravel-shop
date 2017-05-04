@@ -17,5 +17,12 @@ Route::get('contact', 	'ContactController@index');
 
 Route::get('about', 	'AboutController@index');
 
-Route::get('shop', 		'ShopController@index');
+Route::resource('shop', 'ShopController');
 
+
+Auth::routes();
+
+Route::resource('account', 'AccountController');
+
+Route::resource('blog', 'BlogController');
+Route::post('blog/newcomment','BlogController@newComment');
